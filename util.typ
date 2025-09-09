@@ -36,8 +36,7 @@
             let list-items = start-idxs.windows(2).map(((start, end)) => [
                 #html.elem("a", attrs: (href: "#" + compute-hash(arr.at(start).body.text)))[
                     #arr.at(start).body
-                ]
-                #if start + 1 < end { gen-outline(arr.slice(start + 1, end)) }
+                ] + if start + 1 < end { gen-outline(arr.slice(start + 1, end)) }
             ])
             list(..list-items)
         }
