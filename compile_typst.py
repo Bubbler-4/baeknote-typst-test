@@ -15,7 +15,7 @@ def recurse(items):
         content = chapter['content']
         sys.stderr.write(content + '\n')
         typst_run = subprocess.run(
-            ['../typst', 'compile', '--features', 'html', '--format', 'html', '--root', cwd, '-', '-'],
+            ['typst', 'compile', '--features', 'html', '--format', 'html', '--root', cwd, '-', '-'],
             input=content, capture_output=True, text=True
         )
         output: str = typst_run.stdout
