@@ -35,11 +35,13 @@
         let gen-outline(arr) = {
             let start-depth = arr.at(0).depth
             let start-idxs = arr.enumerate().filter(((idx, it)) => it.depth == start-depth).map(((idx, it)) => idx) + (arr.len(),)
-            let list-items = start-idxs.windows(2).map(((start, end)) => {
-                html.elem("a", attrs: (href: "#" + compute-hash(arr.at(start).body.text)))[
+            let list-items = start-idxs.windows(2).map(((start, end)) => [
+                #set text(style: "inline")
+                #html.elem("a", attrs: (href: "#" + compute-hash(arr.at(start).body.text)))[
                     #arr.at(start).body
-                ] + if start + 1 < end { gen-outline(arr.slice(start + 1, end)) }
-            })
+                ]
+                #if start + 1 < end { gen-outline(arr.slice(start + 1, end)) }
+            ])
             list(..list-items)
         }
         gen-outline(headers)
