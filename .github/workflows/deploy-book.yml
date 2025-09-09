@@ -39,8 +39,8 @@ jobs:
       - name: Install typst
         uses: extractions/setup-crate@v1
         with:
-          owner: laurmaedje
-          name: typst-cli
+          owner: typst
+          name: typst
 
       - name: Generate static content for the book
         run: mdbook build
