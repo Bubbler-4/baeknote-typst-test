@@ -36,10 +36,9 @@
             let start-depth = arr.at(0).depth
             let start-idxs = arr.enumerate().filter(((idx, it)) => it.depth == start-depth).map(((idx, it)) => idx) + (arr.len(),)
             let list-items = start-idxs.windows(2).map(((start, end)) => [
-                #set text(style: "custom", block: false)
-                #html.elem("a", attrs: (href: "#" + compute-hash(arr.at(start).body.text)))[
+                #block(html.elem("a", attrs: (href: "#" + compute-hash(arr.at(start).body.text)))[
                     #arr.at(start).body
-                ]
+                ])
                 #if start + 1 < end { gen-outline(arr.slice(start + 1, end)) }
             ])
             list(..list-items)
