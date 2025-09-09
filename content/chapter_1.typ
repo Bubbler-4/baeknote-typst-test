@@ -20,4 +20,8 @@ $N$의 값이 주어집니다. ($1 <= N <= 100 space.thin 000$)
 
 #spoiler[
     풀이는 스포일러입니다.
+
+    $ x + y = a \ y + z = b \ z + x = c $
+
+    Euler characteristic을 이용한 풀이가 가능합니다.
 ]
