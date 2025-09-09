@@ -14,7 +14,7 @@ command = "python compile_typst.py"
 [output]
 
 [output.html]
-additional-css = ["./utilities/custom.css"]
+# additional-css = ["./utilities/custom.css"]
 git-repository-url = "https://github.com/Bubbler-4/baeknote-typst-test"
 git-repository-icon = "fa-github-alt"
 no-section-label = true
