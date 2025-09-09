@@ -27,8 +27,8 @@ jobs:
         with:
           python-version: 3.12 #install the python needed
           
-      - name: Execute Summary-gen
-        run: python summary_gen.py
+      # - name: Execute Summary-gen
+      #   run: python summary_gen.py
 
       - name: Install mdbook
         uses: extractions/setup-crate@v1
