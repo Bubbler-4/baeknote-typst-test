@@ -1,8 +1,4 @@
 # Summary
 
-[Welcome](./README.md)
-
-# Foo Bar
-
-- [Contents](./foobar/README.md)
-- [1. Introduction](./foobar/introduction.md)
+- [Chapter 1](./chapter_1.typ)
+  - [Section 1](./section_1.typ)
