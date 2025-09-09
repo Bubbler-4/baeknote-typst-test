@@ -1,10 +1,9 @@
+span[role="math"] svg {
+  transform: translate(2px, 0);
+}
+
 figure[role="math"] svg {
   /* https://stackoverflow.com/questions/8639383/how-do-i-center-an-svg-in-a-div */
   display: block;
   margin: auto;
-}
-
-svg {
-  transform: translate(1px, 0);
-  transform-origin: 0% 50%;
 }
