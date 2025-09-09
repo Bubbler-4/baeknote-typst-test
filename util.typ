@@ -18,11 +18,11 @@
     // Math: At the moment, HTML backend cannot emit math equations directly.
     // Workaround: emit them as SVG entities. https://github.com/typst/typst/issues/721#issuecomment-2817289426
     show math.equation.where(block: false): it => {
-        set text(14pt)
+        set text(13.5pt)
         html.elem("span", attrs: (role: "math"), html.frame(it))
     }
     show math.equation.where(block: true): it => {
-        set text(14pt)
+        set text(13.5pt)
         html.elem("figure", attrs: (role: "math"), html.frame(it))
     }
     it
