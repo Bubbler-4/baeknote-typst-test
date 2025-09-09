@@ -37,10 +37,7 @@ jobs:
           name: mdBook
 
       - name: Install typst
-        uses: extractions/setup-crate@v1
-        with:
-          owner: typst
-          name: typst
+        uses: typst-community/setup-typst@v4
 
       - name: Generate static content for the book
         run: mdbook build
