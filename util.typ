@@ -56,6 +56,11 @@
     ])
 }
 
+// Helper function to attach title (tooltip on hover) on links
+#let alink(link, caption, body) = [
+    #html.elem("a", attrs: (title: caption), body)
+]
+
 #let boj-logo(thickness) = curve(
     stroke: blue + thickness,
     curve.move((5pt, 0pt)),
@@ -89,17 +94,17 @@
 ]
 
 #let boj(problem) = [
-    #link("https://www.acmicpc.net/problem/" + str(problem))[
+    #alink("https://www.acmicpc.net/problem/" + str(problem), "BOJ " + str(problem))[
         #html.elem("span", html.frame(boj-logo-basic))
     ]
 ]
 
 #let baeknote(problem) = [
     #let baeknote-link = "https://baeknote.bubbler.blue/problems/" + ("0" * (5 - str(problem).len()) + str(problem)).clusters().join("/") + ".html"
-    #("#"+str(problem)) #link("https://www.acmicpc.net/problem/" + str(problem))[
+    #("#"+str(problem)) #alink("https://www.acmicpc.net/problem/" + str(problem), "BOJ " + str(problem))[
         #html.elem("span", attrs:(style: "vertical-align: middle;"), html.frame(scale(67.5%, reflow: true, boj-logo-basic)))
     ]
-    #link(baeknote-link)[
+    #alink(baeknote-link, "Baeknote " + str(problem))[
         #html.elem("span", attrs:(style: "vertical-align: middle;"), html.frame(scale(54%, reflow: true, baeknote-logo)))
     ]
 ]
