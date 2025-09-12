@@ -72,7 +72,7 @@
 
 #let baeknote-logo = square(size: 20pt, radius: 20%)[
     #align(center+horizon)[
-        #move(dy: 1pt, scale(70%, boj-logo(2pt)))
+        #move(dy: 1.5pt, scale(70%, boj-logo(2pt)))
     ]
     #place(top+center,
         curve(
