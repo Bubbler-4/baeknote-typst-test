@@ -2,7 +2,7 @@
 
 #show: styling
 
-= BOJ 12345 문제 제목
+= BOJ 12345 문제 제목 #boj(1000)
 
 #gen-outline()
 
