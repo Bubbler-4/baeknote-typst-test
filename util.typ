@@ -91,3 +91,13 @@
         #html.elem("span", html.frame(boj-logo))
     ]
 ]
+
+#let baeknote(problem) = [
+    #let baeknote-link = "https://baeknote.bubbler.blue/problems/" + ("0" * (5 - str(problem).len()) + str(problem)).clusters().join("/") + ".html"
+    #link("https://www.acmicpc.net/problem/" + str(problem))[
+        #html.elem("span", html.frame(boj-logo))
+    ]
+    #link(baeknote-link)[
+        #html.elem("span", html.frame(baeknote-logo))
+    ]
+]
