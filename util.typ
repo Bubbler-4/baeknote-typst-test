@@ -56,8 +56,8 @@
     ])
 }
 
-#let boj-logo = curve(
-    stroke: 1.5pt + blue,
+#let boj-logo(thickness) = curve(
+    stroke: blue + thickness,
     curve.move((5pt, 0pt)),
     curve.line((1pt, 16pt)),
     curve.move((11pt, 1pt)),
@@ -68,9 +68,11 @@
     curve.line((13pt, 15pt))
 )
 
+#let boj-logo-basic = boj-logo(1.5pt)
+
 #let baeknote-logo = square(size: 20pt, radius: 20%)[
     #align(center+horizon)[
-        #move(dy: 2pt, scale(70%, boj-logo))
+        #move(dy: 1pt, scale(70%, boj-logo(2pt)))
     ]
     #place(top+center,
         curve(
@@ -88,14 +90,14 @@
 
 #let boj(problem) = [
     #link("https://www.acmicpc.net/problem/" + str(problem))[
-        #html.elem("span", html.frame(boj-logo))
+        #html.elem("span", html.frame(boj-logo-basic))
     ]
 ]
 
 #let baeknote(problem) = [
     #let baeknote-link = "https://baeknote.bubbler.blue/problems/" + ("0" * (5 - str(problem).len()) + str(problem)).clusters().join("/") + ".html"
     #("#"+str(problem)) #link("https://www.acmicpc.net/problem/" + str(problem))[
-        #html.elem("span", html.frame(scale(60%, reflow: true, boj-logo)))
+        #html.elem("span", html.frame(scale(60%, reflow: true, boj-logo-basic)))
     ]
     #link(baeknote-link)[
         #html.elem("span", html.frame(scale(54%, reflow: true, baeknote-logo)))
