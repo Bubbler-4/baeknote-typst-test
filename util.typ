@@ -4,6 +4,7 @@
 }
 
 // Extract plain text from any element
+// https://sitandr.github.io/typst-examples-book/book/typstonomicon/extract_plain_text.html
 #let plain-text(it) = {
     return if type(it) == str {
         it
@@ -114,9 +115,10 @@
     )
 ]
 
-#let boj(problem) = [
+#let boj(problem, title) = [
+    BOJ #problem #title
     #alink("https://www.acmicpc.net/problem/" + str(problem), "BOJ " + str(problem))[
-        #html.elem("span", html.frame(boj-logo-basic))
+        #html.elem("span", attrs:(style: "vertical-align: middle;"), html.frame(boj-logo-basic))
     ]
 ]
 
