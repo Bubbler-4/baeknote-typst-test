@@ -98,6 +98,6 @@
         #html.elem("span", html.frame(scale(60%, reflow: true, boj-logo)))
     ]
     #link(baeknote-link)[
-        #html.elem("span", html.frame(scale(60%, reflow: true, baeknote-logo)))
+        #html.elem("span", html.frame(scale(54%, reflow: true, baeknote-logo)))
     ]
 ]
