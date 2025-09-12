@@ -58,7 +58,7 @@
 
 // Helper function to attach title (tooltip on hover) on links
 #let alink(link, caption, body) = [
-    #html.elem("a", attrs: (title: caption), body)
+    #html.elem("a", attrs: (href: link, title: caption), body)
 ]
 
 #let boj-logo(thickness) = curve(
