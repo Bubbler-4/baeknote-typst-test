@@ -3,11 +3,32 @@
     s.replace(regex("\\s"), "-")
 }
 
+// Extract plain text from any element
+#let plain-text(it) = {
+    return if type(it) == str {
+        it
+    } else if it == [ ] {
+        " "
+    } else if it.has("children") {
+        it.children.map(plain-text).join()
+    } else if it.has("body") {
+        plain-text(it.body)
+    } else if it.has("text") {
+        if type(it.text) == str {
+            it.text
+        } else {
+            plain-text(it.text)
+        }
+    } else {
+        ""
+    }
+}
+
 // Wrap show rules in a styling function so that they can be imported and used with `#show: styling`
 // https://forum.typst.app/t/how-can-i-create-a-set-of-shared-set-and-show-rules-which-can-be-imported-into-a-theme/1292/3
 #let styling(it) = {
     show heading: it => {
-        let hash = compute-hash(it.body.text)
+        let hash = compute-hash(plain-text(it))
         html.elem("h" + str(it.depth), attrs: (id: hash))[
             //#html.elem("a", attrs: (class: "header", href: "#" + hash))[
                 #it.body
@@ -36,7 +57,7 @@
             let start-depth = arr.at(0).depth
             let start-idxs = arr.enumerate().filter(((idx, it)) => it.depth == start-depth).map(((idx, it)) => idx) + (arr.len(),)
             let list-items = start-idxs.windows(2).map(((start, end)) => [
-                #block(html.elem("a", attrs: (href: "#" + compute-hash(arr.at(start).body.text)))[
+                #block(html.elem("a", attrs: (href: "#" + compute-hash(plain-text(arr.at(start)))))[
                     #arr.at(start).body
                 ])
                 #if start + 1 < end { gen-outline(arr.slice(start + 1, end)) }
