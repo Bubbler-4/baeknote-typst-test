@@ -97,7 +97,7 @@
 #let baeknote(problem) = [
     #let baeknote-link = "https://baeknote.bubbler.blue/problems/" + ("0" * (5 - str(problem).len()) + str(problem)).clusters().join("/") + ".html"
     #("#"+str(problem)) #link("https://www.acmicpc.net/problem/" + str(problem))[
-        #html.elem("span", html.frame(scale(60%, reflow: true, boj-logo-basic)))
+        #html.elem("span", html.frame(scale(67.5%, reflow: true, boj-logo-basic)))
     ]
     #link(baeknote-link)[
         #html.elem("span", html.frame(scale(54%, reflow: true, baeknote-logo)))
