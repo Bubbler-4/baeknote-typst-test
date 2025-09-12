@@ -58,14 +58,14 @@
 
 #let boj-logo = curve(
     stroke: 1.5pt + blue,
-    curve.move((5pt, 2pt)),
-    curve.line((1pt, 18pt)),
-    curve.move((11pt, 3pt)),
-    curve.line((6pt, 10pt)),
-    curve.line((11pt, 17pt)),
-    curve.move((13pt, 3pt)),
-    curve.line((18pt, 10pt)),
-    curve.line((13pt, 17pt))
+    curve.move((5pt, 0pt)),
+    curve.line((1pt, 16pt)),
+    curve.move((11pt, 1pt)),
+    curve.line((6pt, 8pt)),
+    curve.line((11pt, 15pt)),
+    curve.move((13pt, 1pt)),
+    curve.line((18pt, 8pt)),
+    curve.line((13pt, 15pt))
 )
 
 #let baeknote-logo = square(size: 20pt, radius: 20%)[
