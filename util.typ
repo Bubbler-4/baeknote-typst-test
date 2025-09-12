@@ -55,3 +55,39 @@
         #body
     ])
 }
+
+#let boj-logo = curve(
+    stroke: 1.5pt + blue,
+    curve.move((5pt, 2pt)),
+    curve.line((1pt, 18pt)),
+    curve.move((11pt, 3pt)),
+    curve.line((6pt, 10pt)),
+    curve.line((11pt, 17pt)),
+    curve.move((13pt, 3pt)),
+    curve.line((18pt, 10pt)),
+    curve.line((13pt, 17pt))
+)
+
+#let baeknote-logo = square(size: 20pt, radius: 20%)[
+    #align(center+horizon)[
+        #scale(70%)[ #boj-logo ]
+    ]
+    #place(top+center,
+        curve(
+            curve.move((0pt, -8pt)),
+            curve.quad((-3pt, -4.5pt), (0pt, -1pt)),
+            curve.move((3pt, -8pt)),
+            curve.quad((0pt, -4.5pt), (3pt, -1pt)),
+            curve.move((6pt, -8pt)),
+            curve.quad((3pt, -4.5pt), (6pt, -1pt)),
+            curve.move((9pt, -8pt)),
+            curve.quad((6pt, -4.5pt), (9pt, -1pt)),
+        )
+    )
+]
+
+#let boj(problem) = [
+    #link("https://www.acmicpc.net/problem/" + str(problem))[
+        #html.elem("span", html.frame(boj-logo))
+    ]
+]
