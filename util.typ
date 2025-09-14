@@ -131,3 +131,13 @@
         #html.elem("span", attrs:(style: "vertical-align: middle;"), html.frame(scale(54%, reflow: true, baeknote-logo)))
     ]
 ]
+
+#let baeknote-template(prob-id, prob-title, body) = [
+    #show: styling
+
+    = #boj(prob-id, prob-title)
+
+    #gen-outline()
+
+    #body
+]
