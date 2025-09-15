@@ -13,7 +13,7 @@ def recurse(items):
     for book_item in items:
         if 'Chapter' in book_item:
             chapter = book_item['Chapter']
-            if chapter['source_path'] is str and chapter['source_path'].endswith('.typ'):
+            if isinstance(chapter['source_path'], str) and chapter['source_path'].endswith('.typ'):
                 content = chapter['content']
                 sys.stderr.write(content + '\n')
                 typst_run = subprocess.run(
