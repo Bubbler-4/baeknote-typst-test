@@ -1,6 +1,6 @@
 #import "util.typ": *
 
-#baeknote-template[
+#baeknote-template(outline: false)[
     = Baeknote에 관하여
 
     Baeknote는 가능한 한 많은 BOJ의 문제에 대하여 문제 풀이에 도움이 될 만한 내용을 모으는 것을 목표로 합니다.
