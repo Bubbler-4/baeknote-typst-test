@@ -2,7 +2,7 @@
 
 # Baeknote
 
-- [Baeknote에 관하여](./README.md)
+- [Baeknote에 관하여](./README.typ)
 
 # 문제 목록
 
