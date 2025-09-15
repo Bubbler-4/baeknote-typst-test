@@ -1,6 +1,6 @@
 #import "util.typ": *
 
-#baeknote-template(1000, "문제 제목")[
+#baeknote-template(id: 1000, title: "문제 제목")[
     == 문제 내용
     
     === 입력
