@@ -31,8 +31,9 @@
     set list(tight: false)
 
     // default rendering only has <pre>
+    // use <br> for line breaks to avoid stripping leading spaces
     show raw.where(block: true): it => {
-        html.elem("pre", html.elem("code", it.text))
+        html.elem("pre", html.elem("code", it.text.replace("\n", "<br>")))
     }
 
     show heading: it => {
