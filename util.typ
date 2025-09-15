@@ -28,6 +28,8 @@
 // Wrap show rules in a styling function so that they can be imported and used with `#show: styling`
 // https://forum.typst.app/t/how-can-i-create-a-set-of-shared-set-and-show-rules-which-can-be-imported-into-a-theme/1292/3
 #let styling(it) = {
+    set list(tight: false)
+
     show heading: it => {
         let hash = compute-hash(plain-text(it))
         html.elem("h" + str(it.depth), attrs: (id: hash))[
