@@ -21,4 +21,3 @@ no-section-label = true
 default-theme = "rust"
 preferred-dark-theme = "navy"
 site-url = "/baeknote-typst-test/"
-input-404 = "404.typ"
