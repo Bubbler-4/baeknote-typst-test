@@ -132,14 +132,14 @@
     ]
 ]
 
-#let baeknote-template(id: none, title: none, body) = [
+#let baeknote-template(id: none, title: none, outline: true, body) = [
     #show: styling
 
     #if id != none [
         = #boj(id, title)
     ]
 
-    #gen-outline()
+    #if outline [ #gen-outline() ]
 
     #body
 ]
