@@ -132,7 +132,7 @@
     ]
 ]
 
-#let baeknote-template(prob-id: none, prob-title: none, body) = [
+#let baeknote-template(id: none, title: none, body) = [
     #show: styling
 
     #if prob-id != none [
