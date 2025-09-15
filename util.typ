@@ -135,8 +135,8 @@
 #let baeknote-template(id: none, title: none, body) = [
     #show: styling
 
-    #if prob-id != none [
-        = #boj(prob-id, prob-title)
+    #if id != none [
+        = #boj(id, title)
     ]
 
     #gen-outline()
