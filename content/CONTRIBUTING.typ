@@ -41,8 +41,8 @@
     - Typst의 HTML 백엔드에서 지원하는 모든 기능을 사용할 수 있습니다.
         - Markdown과 비슷한 문서 문법을 사용할 수 있습니다. #link("https://typst.app/docs/reference/syntax/")[Typst - Syntax]를 참조해 주세요.
         - 수식을 입력할 수 있습니다. `$a+b$`를 입력하면 MathJax의 `$a+b$`와 같이 인라인 수식, `$` 안쪽에 띄어쓰기를 넣어서 `$ a+b $`와 같이 쓰면 MathJax의 `$$a+b$$`와 같이 블록 수식이 됩니다.
-        - 그림 그리기와 같이 지원되지 않는 기능의 경우 #link(https://typst.app/docs/reference/html/frame/)[`html.frame`]을 사용하면 됩니다.
-        - #link(https://typst.app/)[typst.app]에서 빈 문서를 만들어 컴파일 결과를 확인할 수 있습니다.
+        - 그림 그리기와 같이 지원되지 않는 기능의 경우 #link("https://typst.app/docs/reference/html/frame/")[`html.frame`]을 사용하면 됩니다.
+        - #link("https://typst.app/")[typst.app]에서 빈 문서를 만들어 컴파일 결과를 확인할 수 있습니다.
     - 몇 가지 편의 기능을 사용할 수 있습니다.
         - `#baeknote(1428)`을 입력하면 #baeknote(1428) 과 같이 백준 링크와 백노트 링크가 표시됩니다.
         - `#spoiler[내용]`을 입력하면 클릭으로 접었다 폈다 할 수 있는 스포일러 영역이 만들어집니다. 제목을 바꾸려면 `#spoiler(title:"다른 제목")[내용]`과 같이 사용합니다.
