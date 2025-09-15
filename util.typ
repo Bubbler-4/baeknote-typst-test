@@ -30,6 +30,11 @@
 #let styling(it) = {
     set list(tight: false)
 
+    // default rendering only has <pre>
+    show raw.where(block: true): it => {
+        html.elem("pre", html.elem("code", it.text))
+    }
+
     show heading: it => {
         let hash = compute-hash(plain-text(it))
         html.elem("h" + str(it.depth), attrs: (id: hash))[
